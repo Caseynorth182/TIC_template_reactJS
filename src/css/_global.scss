@@ -1,0 +1,225 @@
+/* -------------------------------------------------------------------------- */
+/*                            //LINK STICKY footer                            */
+/* -------------------------------------------------------------------------- */
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+header {
+	/* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+	flex: 0 0 auto;
+}
+
+.main-content {
+	/* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+	flex: 1 0 auto;
+	overflow: hidden;
+}
+
+footer {
+	/* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+	flex: 0 0 auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              //LINK CONTAINER                              */
+/* -------------------------------------------------------------------------- */
+.container {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 15px 0 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               //LINK GLOBALS                               */
+/* -------------------------------------------------------------------------- */
+html,
+body {
+	font-family: 'RockStar', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: var(--text-color-dark);
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+.arrowed {
+	display: inline;
+	padding-right: 45px;
+	position: relative;
+
+	&:before {
+		content: url('/img/icons/arrow-left.svg');
+		position: absolute;
+		right: 10px;
+		transition: all 0.2s ease-in-out;
+
+	}
+
+	&--black {
+		&:before {
+			content: url('/img/icons/arrow-left-black.svg');
+			position: absolute;
+			right: 10px;
+			transition: all 0.2s ease-in-out;
+
+		}
+	}
+
+	&:hover:before {
+		right: 0;
+	}
+}
+
+.section__title {
+	font-family: RockStar;
+	font-style: normal;
+	font-weight: 800;
+	color: var(--text-color-dark);
+	margin-bottom: 40px;
+
+	&--small {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+}
+
+.breadcrumb {
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: 0;
+	margin-bottom: 0;
+	list-style: none;
+	background-color: transparent;
+	border-radius: none;
+	align-items: center;
+	justify-content: flex-start;
+	align-content: center;
+	color: var(--white-color);
+
+	&--dark {
+		color: var(--text-color-dark);
+		padding-top: 30px;
+	}
+
+	&__item {}
+
+	&__link {
+		font-family: 'RockStar';
+		font-style: normal;
+		font-weight: normal;
+		font-size: 0.75rem;
+		line-height: 0.75rem;
+		color: inherit;
+		cursor: pointer;
+
+		&:hover {
+			color: inherit;
+			opacity: 0.7;
+		}
+	}
+
+	/* //NOTE  */
+	b {
+		color: inherit;
+	}
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           //LINK FULLPAGE SLIDER                           */
+/* -------------------------------------------------------------------------- */
+.fullpage-slider {
+	padding: 60px 0;
+
+	.swiper-slide {
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			/* opacity: 0.8; */
+			filter: brightness(50%);
+		}
+	}
+
+	&__img {
+		width: 100%;
+		object-fit: cover;
+		object-position: center center;
+		height: 100%;
+		cursor: pointer;
+
+	}
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__swiper {
+		overflow: hidden;
+		width: 100%;
+		height: 212px;
+	}
+
+	&__swiper-wrapper {
+		padding-left: -10px;
+		padding-right: -10px;
+	}
+
+	.swiper-button-prev {
+		left: -30px;
+
+	}
+
+	.swiper-button-next {
+		right: -30px;
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background: #FFFFFF;
+	box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.11);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: flex-start;
+	align-content: center;
+}
+
+.swiper-button-prev {
+
+	&::after {
+		content: url('/img/icons/slider-left.svg');
+	}
+
+	&--event {
+		position: static;
+	}
+}
+
+.swiper-button-next {
+
+	&::after {
+		content: url('/img/icons/slider-right.svg');
+	}
+
+	&--event {
+		position: static;
+	}
+}
