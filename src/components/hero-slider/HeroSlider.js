@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Pagination, Autoplay } from "swiper";
+import { v4 as uuidv4 } from 'uuid';
 import 'swiper/css';
 import HeroSlide from './HeroSlide';
 
@@ -18,7 +19,7 @@ const slides = [
 
 const elements = slides.map(item => {
     return (
-        <SwiperSlide><HeroSlide title={item.title} subtitle={item.subtitle} img={item.img} /></SwiperSlide>
+        <SwiperSlide key={uuidv4() + 1}><HeroSlide key={uuidv4() + 1} title={item.title} subtitle={item.subtitle} img={item.img} /></SwiperSlide>
     )
 })
 
@@ -39,8 +40,7 @@ const HeroSlider = () => {
                 delay: 2500,
                 disableOnInteraction: false,
             }}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+
         >
 
             {elements}

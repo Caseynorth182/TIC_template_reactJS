@@ -1,7 +1,7 @@
 
 const SmallTitle = (props) => {
     return (
-        <h3 class="section__title section__title--small">{props.text}</h3>
+        <h3 className="section__title section__title--small">{props.text}</h3>
     )
 }
 

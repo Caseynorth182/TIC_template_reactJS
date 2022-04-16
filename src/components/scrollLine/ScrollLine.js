@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useEffect, useRef } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -32,7 +33,7 @@ const imageObj = [
 const ScrollLine = () => {
     const boxRef = useRef();
     const elements = imageObj.map(item => {
-        return <img ref={boxRef} src={item.url} alt="" class="about__slider-element" />
+        return <img key={uuidv4() + 1} ref={boxRef} src={item.url} alt="" className="about__slider-element" />
     })
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -56,13 +57,13 @@ const ScrollLine = () => {
             );
     });
     return (
-        <>
-            <div class="about__slider">
-                <div class="about__slider-wrapper">
-                    {elements}
-                </div>
+
+        <div key={uuidv4() + 1} className="about__slider">
+            <div className="about__slider-wrapper">
+                {elements}
             </div>
-        </>
+        </div>
+
     )
 }
 

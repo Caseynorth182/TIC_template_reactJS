@@ -8,8 +8,8 @@ import Loader from "../components/loader/Loader";
 import ScrollLine from "../components/scrollLine/ScrollLine";
 import CardFilter from "../components/card-filter/CardFilter";
 
-const Home = () => {
-
+const Home = (props) => {
+    const cards = props;
     return (
         <>
             {/* //LINK HERO */}
@@ -43,7 +43,7 @@ const Home = () => {
             <section className="event-blog">
                 <div className="container">
                     <SmallTitle text={'Ближайшие мероприятия'} />
-                    <CardFilter />
+                    <CardFilter cards={cards} />
                 </div>
             </section>
 
